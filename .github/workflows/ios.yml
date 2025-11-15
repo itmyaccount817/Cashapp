@@ -19,14 +19,14 @@ jobs:
         with:
           xcode-version: latest
 
-      - name: Resolve Swift Packages (if any)
+      - name: Resolve Swift Packages
         run: xcodebuild -resolvePackageDependencies
 
-      - name: Build App (no tests)
+      - name: Build App
         run: |
           xcodebuild \
             -project CashappSpoof.xcodeproj \
             -scheme CashappSpoof \
             -sdk iphonesimulator \
-            -destination "platform=iOS Simulator,name=iPhone 16" \
+            -destination "platform=iOS Simulator,name=iPhone 15" \
             clean build
